@@ -21,7 +21,7 @@ export default function Home() {
         {/* Background */}
         <div className="absolute inset-0">
           <Image
-            src="/africa 2.0.webp"
+            src="/africa-2.0.webp"
             alt="African art background"
             fill
             className="object-cover"

@@ -19,15 +19,20 @@ export default function Navbar() {
     return (
         <header className="sticky top-0 z-50">
             {/* Main Navbar */}
-            <nav className="bg-warm-black/95 backdrop-blur-md border-b border-white/5 text-white">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav className="bg-cream/95 backdrop-blur-md border-b border-warm-black/10 text-warm-black">
+                <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16">
+                        {/* Logo */}
                         {/* Logo */}
                         <Link
                             href="/"
-                            className="text-2xl font-bold tracking-tight bg-gradient-to-r from-brand-light to-amber-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
+                            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
                         >
-                            OaksCurioCrate
+                            <img
+                                src="/images/logo-2.webp"
+                                alt="OaksCurioCrate Logo"
+                                className="h-12 w-auto object-contain"
+                            />
                         </Link>
 
                         {/* Desktop Nav */}
@@ -36,7 +41,7 @@ export default function Navbar() {
                                 <Link
                                     key={link.href}
                                     href={link.href}
-                                    className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200"
+                                    className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-warm-black/80 hover:text-warm-black hover:bg-warm-black/5 rounded-lg transition-all duration-200"
                                 >
                                     {link.icon}
                                     {link.label}
@@ -48,7 +53,7 @@ export default function Navbar() {
                         <div className="hidden md:flex items-center gap-2">
                             <Link
                                 href="/login"
-                                className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200"
+                                className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-warm-black/80 hover:text-warm-black hover:bg-warm-black/5 rounded-lg transition-all duration-200"
                             >
                                 <User size={16} />
                                 Sign In
@@ -70,7 +75,7 @@ export default function Navbar() {
                         {/* Mobile Menu Button */}
                         <div className="flex md:hidden items-center gap-3">
                             <Link href="/cart" className="relative p-2">
-                                <ShoppingCart size={20} className="text-white/80" />
+                                <ShoppingCart size={20} className="text-warm-black/80" />
                                 {cartCount > 0 && (
                                     <span className="absolute -top-0.5 -right-0.5 bg-amber-500 text-warm-black text-xs font-bold w-4 h-4 rounded-full flex items-center justify-center">
                                         {cartCount}
@@ -79,7 +84,7 @@ export default function Navbar() {
                             </Link>
                             <button
                                 onClick={() => setMenuOpen(!menuOpen)}
-                                className="p-2 text-white/80 hover:text-white transition-colors"
+                                className="p-2 text-warm-black/80 hover:text-warm-black transition-colors"
                                 aria-label="Toggle menu"
                             >
                                 {menuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -90,24 +95,24 @@ export default function Navbar() {
 
                 {/* Mobile Menu Dropdown */}
                 {menuOpen && (
-                    <div className="md:hidden animate-slide-down border-t border-white/5">
+                    <div className="md:hidden animate-slide-down border-t border-warm-black/10">
                         <div className="px-4 py-3 space-y-1">
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.href}
                                     href={link.href}
                                     onClick={() => setMenuOpen(false)}
-                                    className="flex items-center gap-2 px-3 py-2.5 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all"
+                                    className="flex items-center gap-2 px-3 py-2.5 text-sm font-medium text-warm-black/80 hover:text-warm-black hover:bg-warm-black/5 rounded-lg transition-all"
                                 >
                                     {link.icon}
                                     {link.label}
                                 </Link>
                             ))}
-                            <hr className="border-white/10 my-2" />
+                            <hr className="border-warm-black/10 my-2" />
                             <Link
                                 href="/login"
                                 onClick={() => setMenuOpen(false)}
-                                className="flex items-center gap-2 px-3 py-2.5 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all"
+                                className="flex items-center gap-2 px-3 py-2.5 text-sm font-medium text-warm-black/80 hover:text-warm-black hover:bg-warm-black/5 rounded-lg transition-all"
                             >
                                 <User size={16} />
                                 Sign In
@@ -115,7 +120,7 @@ export default function Navbar() {
                             <Link
                                 href="/register"
                                 onClick={() => setMenuOpen(false)}
-                                className="flex items-center gap-2 px-3 py-2.5 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all"
+                                className="flex items-center gap-2 px-3 py-2.5 text-sm font-medium text-warm-black/80 hover:text-warm-black hover:bg-warm-black/5 rounded-lg transition-all"
                             >
                                 <User size={16} />
                                 Create Account
